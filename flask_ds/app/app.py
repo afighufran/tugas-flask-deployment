@@ -1,8 +1,8 @@
 '''
 	Contoh Deloyment untuk Domain Data Science (DS)
-	Orbit Future Academy - AI Mastery - KM Batch 3
+	Orbit Future Academy - AI Mastery - KM Batch 4
 	Tim Deployment
-	2022
+	2023
 '''
 
 # =[Modules dan Packages]========================
@@ -17,9 +17,7 @@ from joblib import load
 # =[Variabel Global]=============================
 
 app = Flask(__name__, static_url_path='/static')
-# model = None
-model = load('model_iris_dt.model')
-
+model = None
 
 # =[Routing]=====================================
 
@@ -78,7 +76,8 @@ def apiDeteksi():
 if __name__ == '__main__':
 
     # Load model yang telah ditraining
+    model = load('model_iris_dt.model')
 
-    # Run Flask di localhost
+    # Run Flask di Google Colab menggunakan ngrok
     run_with_ngrok(app)
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    app.run()
