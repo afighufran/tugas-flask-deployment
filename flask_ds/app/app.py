@@ -20,6 +20,7 @@ app = Flask(__name__, static_url_path='/static')
 # model = None
 model = load('model_iris_dt.model')
 
+
 # =[Routing]=====================================
 
 # [Routing untuk Halaman Utama atau Home]
@@ -77,8 +78,7 @@ def apiDeteksi():
 if __name__ == '__main__':
 
     # Load model yang telah ditraining
-    # model = load('model_iris_dt.model')
 
     # Run Flask di localhost
     run_with_ngrok(app)
-    app.run()
+    app.run(host="127.0.0.1", port=5000, debug=True)
