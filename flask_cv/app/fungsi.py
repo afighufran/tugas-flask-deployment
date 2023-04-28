@@ -1,6 +1,7 @@
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Activation, Dropout,LeakyReLU
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Activation, Dropout, LeakyReLU
+
 
 def make_model():
     model = Sequential()
@@ -21,5 +22,5 @@ def make_model():
     model.add(LeakyReLU(0.1))
     model.add(Dropout(0.5))
     model.add(Dense(10, activation='softmax'))
-    
+
     return model
